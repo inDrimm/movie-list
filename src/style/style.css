@@ -1,0 +1,70 @@
+@media (max-width: 415px) {
+    .myBg {
+        width: auto;
+        height: auto;
+    }
+}
+
+.myBg {
+    /* height: 100vh; */
+    background-image: url('../assets/bg-moon.jpg');
+    background-size: contain;
+}
+
+/* 
+.myBg2 {
+    height: 100vh;
+    background-image: url('../assets/joker.jpg');
+    background-size: contain;
+} */
+
+.navLink {
+    text-align: auto;
+    color: white
+}
+
+.home {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.position-search {
+    color: white;
+    margin-top: 105px;
+    text-align: center;
+}
+
+.search {
+    font-size: 25px;
+    text-align: center;
+}
+
+.content {
+    color: black;
+    margin-top: 55px;
+    text-align: center;
+}
+
+.cardTitle {
+    height: 50px;
+}
+
+.imgMovies {
+    height: 400px;
+    width: auto;
+}
+
+.cardColor {
+    background-color: rgb(230, 230, 230);
+}
+
+.cardOverview {
+    overflow-y: auto;
+    height: 200px;
+}
+
+.txt-footer {
+    font-size: 25px;
+    color: rgb(223, 194, 32);
+}
