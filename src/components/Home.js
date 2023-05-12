@@ -1,5 +1,5 @@
 import { Col, Container, Row, CardGroup, Card } from "react-bootstrap";
-import getMovieList from "./Movie_List";
+import getMovieList, { searchMovies } from "./Movie_List";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -9,6 +9,13 @@ export default function Home() {
     }, []);
     // console.log({ datas: movie });
 
+    async function search(q) {
+        if (q.length > 3) {
+            const request = await searchMovies(q);
+            setMovieList(request);
+        }
+    }
+
     return (
         <div className="myBg">
             <Container className="home">
@@ -16,7 +23,7 @@ export default function Home() {
                     <div className="position-search">
                         <Col>
                             <h1>Cari Disini</h1>
-                            <input type="text" placeholder="Search" className="search" />
+                            <input type="text" placeholder="Search" className="search" onChange={((e) => search(e.target.value))} />
                         </Col>
                     </div>
                 </Row>
@@ -28,7 +35,7 @@ export default function Home() {
                             {movie.map((res, index) => {
                                 return (
                                     <Col xl={3}>
-                                        <Card Card key={index} className="m-1" >
+                                        <Card Card key={index} className="m-1" id="trending">
                                             <div className="cardColor">
                                                 <Card.Title className="cardTitle">{res.title}</Card.Title>
                                                 <Card.Img variant="top" src={`${process.env.REACT_APP_IMG_URL}/${res.poster_path}`} className="imgMovies" />

@@ -7,8 +7,8 @@ export default function NavigationBar() {
                 <Container>
                     <Navbar.Brand href="/" className="text-white">Movie List</Navbar.Brand>
                     <Nav>
-                        <Nav.Link className="navLink">Trending</Nav.Link>
-                        <Nav.Link className="navLink">Popular</Nav.Link>
+                        <Nav.Link className="navLink" href="#trending">Trending</Nav.Link>
+                        <Nav.Link className="navLink" href="#popular">Popular</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
